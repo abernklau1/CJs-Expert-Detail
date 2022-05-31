@@ -112,6 +112,23 @@ h6 {
 
 // HOME
 
+.home {
+  position: relative;
+  z-index: -1;
+  //background-image: url("../public/images/cjs-home-img.jpg");
+  //height: 100vh;
+  .hero {
+    position: absolute;
+    width: 50vw;
+    top: 25%;
+    left: 5rem;
+    font-size: 2vw;
+  }
+  h1 {
+    color: white;
+  }
+}
+
 .home-img {
   width: 100%;
 }
