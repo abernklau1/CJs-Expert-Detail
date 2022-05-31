@@ -3,8 +3,8 @@ const Home = () => {
     <section className="home content-container">
       <div className="hero">
         <h1>
-          I'm baby vinyl kombucha gochujang next level. Fam raw denim 3 wolf
-          moon migas.
+          Expert quality detailing with excellent customer service, the only
+          place you can get both!
         </h1>
       </div>
       <div>

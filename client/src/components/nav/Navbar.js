@@ -8,12 +8,22 @@ const Navbar = () => {
         <Logo />
         <ul className="nav-list">
           <li className="nav-list-items">
-            <NavLink className="nav-link" to="/">
+            <NavLink id="home" className="nav-link" to="/#home">
               Home
             </NavLink>
           </li>
           <li className="nav-list-items">
-            <NavLink className="nav-link" to="/about">
+            <NavLink id="services" className="nav-link" to="/services#services">
+              Services
+            </NavLink>
+          </li>
+          <li className="nav-list-items">
+            <NavLink id="contact" className="nav-link" to="/contact#contact">
+              Contact
+            </NavLink>
+          </li>
+          <li className="nav-list-items">
+            <NavLink id="about" className="nav-link" to="/about#about">
               About
             </NavLink>
           </li>
