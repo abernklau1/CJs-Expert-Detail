@@ -1,7 +1,12 @@
-import React from "react";
+import { ServiceCard } from "../components";
 
 const Services = () => {
-  return <div>Services</div>;
+  return (
+    <section>
+      Services
+      <ServiceCard />
+    </section>
+  );
 };
 
 export default Services;
