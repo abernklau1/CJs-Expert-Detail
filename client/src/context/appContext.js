@@ -1,9 +1,25 @@
 import { useReducer, useContext, createContext } from "react";
-import { CHANGE_NAV_COLOR } from "./actions";
 import reducer from "./reducer";
 
 const initialState = {
-  navColor: "transparent",
+  services: [
+    {
+      name: "Interior",
+      price: "$200",
+      desc: ["Vacuum", "Shampoo", "Wipe down"],
+    },
+    {
+      name: "Full Detail",
+      price: "$350",
+      desc: [
+        "Everything Interior offers plus...",
+        "Polish",
+        "Paint Correction",
+        "Engine bay wipe down",
+        "Wheel clean and shine",
+      ],
+    },
+  ],
 };
 
 const AppContext = createContext();
@@ -11,14 +27,8 @@ const AppContext = createContext();
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const changeNav = ({ navColor }) => {
-    if (navColor) dispatch({ type: CHANGE_NAV_COLOR, payload: { navColor } });
-  };
-
   return (
-    <AppContext.Provider value={{ ...state, changeNav }}>
-      {children}
-    </AppContext.Provider>
+    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
   );
 };
 

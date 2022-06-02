@@ -48,6 +48,10 @@ h6 {
   font-family: var(--header-font);
 }
 
+.content-container {
+  padding-bottom: var(--footer-separator);
+}
+
 .logo-container {
   width: 300px;
   height: 100%;
@@ -105,12 +109,18 @@ h6 {
         text-decoration: none;
         color: white;
         padding: 20px;
-        &:target {
-          color: #d72323;
-        }
+      }
+      .active {
+        color: #d72323;
       }
     }
   }
+}
+
+.not-home {
+  background-color: black;
+  position: static;
+  padding-top: 0.1px;
 }
 
 // HOME
@@ -118,8 +128,6 @@ h6 {
 .home {
   position: relative;
   z-index: -1;
-  //background-image: url("../public/images/cjs-home-img.jpg");
-  //height: 100vh;
   .hero {
     position: absolute;
     width: 50vw;
@@ -156,5 +164,35 @@ h6 {
     opacity: 1;
     transform: translateX(0);
     transform: translateZ(0);
+  }
+}
+
+// SERVICES
+
+.services {
+  text-align: center;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.card-container {
+  width: 250px;
+  box-shadow: var(--box-shadow-4);
+  h2 {
+    font-size: 3rem;
+  }
+  ul {
+    margin: 15px;
+    text-align: left;
+    padding: 1px 25px;
+    box-shadow: var(--box-shadow-2);
+    li {
+      margin: 10px auto;
+    }
   }
 }

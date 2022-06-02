@@ -8,7 +8,11 @@ const Home = () => {
         </h1>
       </div>
       <div>
-        <img class="home-img" src="images/cjs-home-img.jpg" alt="Nice Car" />
+        <img
+          className="home-img"
+          src="images/cjs-home-img.jpg"
+          alt="Nice Car"
+        />
       </div>
     </section>
   );

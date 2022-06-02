@@ -1,10 +1,17 @@
 import { ServiceCard } from "../components";
+import { useAppContext } from "../context/appContext";
 
 const Services = () => {
+  const { services } = useAppContext();
+
   return (
-    <section>
+    <section className="services content-container">
       Services
-      <ServiceCard />
+      <div className="services-container">
+        {services.map((service, i) => {
+          return <ServiceCard key={i} service={service} />;
+        })}
+      </div>
     </section>
   );
 };
