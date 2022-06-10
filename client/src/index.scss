@@ -77,6 +77,44 @@ h6 {
   }
 }
 
+.btn-container {
+  position: absolute;
+  bottom: 0;
+}
+
+.btn {
+  margin: 0 15px 15px;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -0.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+  user-select: none;
+  touch-action: manipulation;
+  box-shadow: var(--box-shadow-3);
+}
+
+.btn:active {
+  box-shadow: none;
+  color: rgba(60, 64, 67, 0.75);
+  border-color: rgba(60, 64, 67, 0.75);
+}
+
 // SHARED LAYOUT
 
 .nav-container {
@@ -85,7 +123,7 @@ h6 {
   &:after {
     display: block;
     content: "";
-    border-bottom: solid 1px #d72323;
+    border-bottom: solid 1px white;
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
   }
@@ -183,14 +221,29 @@ h6 {
 .card-container {
   width: 250px;
   box-shadow: var(--box-shadow-4);
+  text-align: left;
+  position: relative;
+  height: 355px;
+
   h2 {
     font-size: 3rem;
   }
+
+  h2,
+  p {
+    margin: 0 15px;
+    padding: 10px 0;
+  }
+
+  .service-price {
+    color: white;
+    background-color: black;
+  }
+
   ul {
-    margin: 15px;
+    margin: 15px 0;
     text-align: left;
     padding: 1px 25px;
-    box-shadow: var(--box-shadow-2);
     li {
       margin: 10px auto;
     }

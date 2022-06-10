@@ -14,7 +14,6 @@ const initialState = {
       desc: [
         "Everything Interior offers plus...",
         "Polish",
-        "Paint Correction",
         "Engine bay wipe down",
         "Wheel clean and shine",
       ],
