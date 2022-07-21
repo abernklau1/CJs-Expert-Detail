@@ -12,9 +12,9 @@ const ServiceCard = ({ service }) => {
           ))}
         </ul>
       </div>
-      <div className="btn-container">
-        <button className="btn">Schedule</button>
-      </div>
+      <a className="btn" href="/">
+        Schedule
+      </a>
     </section>
   );
 };

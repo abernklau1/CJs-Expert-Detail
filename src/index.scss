@@ -1,34 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&family=Raleway:wght@300&display=swap");
 
-:root {
-  --box-shadow-1: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  --box-shadow-2: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  --box-shadow-3: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  --box-shadow-4: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+
+  $box-shadow-1: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  $box-shadow-2: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  $box-shadow-3: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  $box-shadow-4: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  --blue: #2155cd;
+  $blue: #2155cd;
   /* #2932e2 */
-  --purple: #9499f1;
-  --dark-purple: #7f84ee;
-  --light-purple: #d4d6f9;
-  --light-blue: #719ece;
-  --white-blue: #eaebfc;
-  --light-gray: #dddddd;
-  --light-gray-2: #f3f3f3;
-  --success-border: #61f3ac;
-  --success-bkg: #dffdee;
-  --danger-border: #f36161;
-  --danger-bkg: #fddfdf;
-  --footer-separator: 8rem;
-  --header-font: "Nunito Sans", sans-serif;
-  --body-font: "Raleway", sans-serif;
-}
+  $purple: #9499f1;
+  $dark-purple: #7f84ee;
+  $light-purple: #d4d6f9;
+  $light-blue: #719ece;
+  $white-blue: #eaebfc;
+  $light-gray: #dddddd;
+  $light-gray-2: #f3f3f3;
+  $success-border: #61f3ac;
+  $success-bkg: #dffdee;
+  $danger-border: #f36161;
+  $danger-bkg: #fddfdf;
+  $footer-separator: 8rem;
+  $header-font: "Nunito Sans", sans-serif;
+  $body-font: "Raleway", sans-serif;
 
 html,
 body {
   min-height: 100vh;
   position: relative;
-  font-family: var(--body-font);
+  font-family: $body-font;
 }
 
 *,
@@ -45,11 +44,20 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--header-font);
+  font-family: $header-font;
 }
 
 .content-container {
-  padding-bottom: var(--footer-separator);
+  padding-bottom: $footer-separator;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a, button {
+  cursor: pointer;
 }
 
 .logo-container {
@@ -62,34 +70,32 @@ h6 {
     width: 250px;
     margin: auto;
     .bold {
-      font-family: var(--header-font);
+      font-family: $header-font;
       font-size: 2rem;
       display: flex;
       flex-direction: row;
       color: white;
       .not-bold {
-        display: block;
         font-weight: 300;
-        font-size: 1.3rem;
-        margin: auto 10px;
+        font-size: 1.3rem ;
       }
     }
   }
 }
 
 .btn-container {
-  position: absolute;
-  bottom: 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-top: 15px;
 }
 
 .btn {
-  margin: 0 15px 15px;
   align-items: center;
   background-color: #fff;
   border: 2px solid #000;
   box-sizing: border-box;
   color: #000;
-  cursor: pointer;
   display: inline-flex;
   fill: #000;
   font-size: 16px;
@@ -105,8 +111,7 @@ h6 {
   text-decoration: none;
   transition: all 0.3s;
   user-select: none;
-  touch-action: manipulation;
-  box-shadow: var(--box-shadow-3);
+  box-shadow: $box-shadow-3;
 }
 
 .btn:active {
@@ -117,21 +122,10 @@ h6 {
 
 // SHARED LAYOUT
 
-.nav-container {
-  position: absolute;
-  width: 100%;
-  &:after {
-    display: block;
-    content: "";
-    border-bottom: solid 1px white;
-    transform: scaleX(0);
-    transition: transform 250ms ease-in-out;
-  }
-  &:hover {
-    &:after {
-      transform: scaleX(1);
-    }
-  }
+.nav-container, .nav-container-home {
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
   .navbar {
     height: 60px;
     display: flex;
@@ -144,45 +138,102 @@ h6 {
       margin: auto;
       margin-right: 4rem;
       .nav-link {
-        text-decoration: none;
-        color: white;
         padding: 20px;
+        text-transform: capitalize;
       }
       .active {
         color: #d72323;
       }
     }
   }
+
 }
 
-.not-home {
+.nav-container-home {
+  &:after {
+    display: block;
+    content: "";
+    border-bottom: solid 1px white;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+  &:hover {
+    &:after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.nav-container {
   background-color: black;
-  position: static;
   padding-top: 0.1px;
+}
+
+.scroll {
+  background-color: black;
+  &:after {
+    display: none;
+  }
 }
 
 // HOME
 
 .home {
   position: relative;
-  z-index: -1;
+  height: 100vh;
+
+  .opener {
+    height: 59vw;
+    background-image: url(../public/images/cjs-home-img.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw;
+  }
+
   .hero {
     position: absolute;
+    display: flex;
+    flex-direction: column;
     width: 50vw;
-    top: 25%;
-    left: 5rem;
+    margin: 10vh 5rem;
     font-size: 2vw;
-    animation-duration: 1.3s;
-    animation-name: fadeInLeft;
-    animation-fill-mode: both;
-  }
-  h1 {
     color: white;
   }
-}
 
-.home-img {
-  width: 100%;
+  h1, .home-btn1, .home-btn2 {
+    animation-name: fadeInLeft;
+    animation-fill-mode: both;
+    animation-duration: 1.3s;
+  }
+
+  .home-btn1 {
+   animation-delay: 2s;
+  }
+
+  .home-btn2 {
+    animation-delay: 1s;
+  }
+
+  .atts {
+    display: flex;
+    flex-direction: column;
+    height: 25rem;
+    padding: 5rem 0;
+
+    .icons-and-desc {
+      display: flex;
+      justify-content: space-around;
+      font-size: 76px;
+      div {
+        width: 20vw;
+        text-align: center;
+      }
+      p {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
+  }
+
 }
 
 @keyframes fadeInLeft {
@@ -198,6 +249,7 @@ h6 {
   80% {
     transform: skewX(5deg);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -220,7 +272,7 @@ h6 {
 
 .card-container {
   width: 250px;
-  box-shadow: var(--box-shadow-4);
+  box-shadow: $box-shadow-4;
   text-align: left;
   position: relative;
   height: 355px;
@@ -247,5 +299,36 @@ h6 {
     li {
       margin: 10px auto;
     }
+  }
+}
+
+// Media Queries
+
+@media (max-width: 510px) {
+  .home .hero {
+    text-align: center;
+    width: 70vw;
+    top: 13rem;
+    color: black;
+
+    .btn-container {
+      justify-content: center;
+    }
+  }
+
+  .home .atts {
+    padding-top: 15rem;
+  }
+
+  .icons-and-desc {
+    margin: auto;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 910px) {
+  .home .hero {
+      font-size: 1.15rem;
   }
 }

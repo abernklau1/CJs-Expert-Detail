@@ -5,7 +5,9 @@ const Logo = () => {
     <div className="logo-container">
       <div className="logo">
         <h4 className="bold">
-          CJ's <span className="not-bold">Expert Detail</span>
+          <a href="/">
+            CJ's <span className="not-bold">Expert Detail</span>
+          </a>
         </h4>
       </div>
     </div>
