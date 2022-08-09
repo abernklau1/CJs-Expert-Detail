@@ -2,6 +2,7 @@ import { useReducer, useContext, createContext } from "react";
 import reducer from "./reducer";
 
 const initialState = {
+  service: ""
 };
 
 const AppContext = createContext();
