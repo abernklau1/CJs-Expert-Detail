@@ -1,6 +1,25 @@
 import { GiSpray } from "react-icons/gi";
 import { RiCustomerServiceFill } from "react-icons/ri";
 import { IoSparklesSharp } from "react-icons/io5";
+import { ServiceCard } from "../components";
+
+const commonServices = [
+  {
+    name: "Interior",
+    price: "$200",
+    desc: ["Vacuum", "Shampoo", "Wipe down"],
+  },
+  {
+    name: "Full Detail",
+    price: "$350",
+    desc: [
+      "Everything Interior offers plus...",
+      "Polish",
+      "Engine bay wipe down",
+      "Wheel clean and shine",
+    ],
+  },
+]
 
 const Home = () => {
 
@@ -32,6 +51,23 @@ const Home = () => {
             <IoSparklesSharp />
             <p>Spotless Shine</p>
           </div>
+        </div>
+      </section>
+      <section class="vid">
+        <div>
+          <iframe>
+          </iframe>
+        </div>
+      </section>
+      <section class="com-services">
+        <h3>
+          Common Services
+        </h3>
+        <p>Providing the best services possible</p>
+        <div className="services-container">
+          {services.map((service, i) => {
+            return <ServiceCard key={i} service={service} />;
+          })}
         </div>
       </section>
     </section>

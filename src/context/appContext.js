@@ -2,23 +2,6 @@ import { useReducer, useContext, createContext } from "react";
 import reducer from "./reducer";
 
 const initialState = {
-  services: [
-    {
-      name: "Interior",
-      price: "$200",
-      desc: ["Vacuum", "Shampoo", "Wipe down"],
-    },
-    {
-      name: "Full Detail",
-      price: "$350",
-      desc: [
-        "Everything Interior offers plus...",
-        "Polish",
-        "Engine bay wipe down",
-        "Wheel clean and shine",
-      ],
-    },
-  ],
 };
 
 const AppContext = createContext();

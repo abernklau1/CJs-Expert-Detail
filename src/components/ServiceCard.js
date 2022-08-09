@@ -1,4 +1,12 @@
+import { useAppContext } from "../context/appContext";
+
+
 const ServiceCard = ({ service }) => {
+
+  const handleClick = () => {
+
+  }
+
   return (
     <section className="card-container">
       <div className="service-price">
@@ -12,7 +20,7 @@ const ServiceCard = ({ service }) => {
           ))}
         </ul>
       </div>
-      <a className="btn" href="/">
+      <a className="btn" href="/" onClick="">
         Schedule
       </a>
     </section>
