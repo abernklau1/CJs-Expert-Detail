@@ -94,6 +94,7 @@ a, button {
   align-items: center;
   background-color: #fff;
   border: 2px solid #000;
+  border-radius: 10px;
   box-sizing: border-box;
   color: #000;
   display: inline-flex;
@@ -216,8 +217,8 @@ a, button {
   .atts {
     display: flex;
     flex-direction: column;
-    height: 25rem;
-    padding: 5rem 0;
+    height: 30rem;
+    padding: 8rem 0;
 
     .icons-and-desc {
       display: flex;
@@ -225,12 +226,31 @@ a, button {
       font-size: 76px;
       div {
         width: 20vw;
+        height: 15rem;
         text-align: center;
-      }
+        padding-top: 3rem;
+        box-shadow: $box-shadow-1;
+        transition: box-shadow .5s;
+        border-radius: 10px;
+
+
+        &:hover {
+          box-shadow: none;
+        }
+        }
       p {
         font-size: 2rem;
         font-weight: bold;
       }
+    }
+  }
+
+  .vid {
+    text-align: center;
+    background-color: black;
+    iframe {
+      width: 400px;
+      height: 300px;
     }
   }
 
@@ -272,7 +292,6 @@ a, button {
 
 .card-container {
   width: 250px;
-  box-shadow: $box-shadow-4;
   text-align: left;
   position: relative;
   height: 355px;
@@ -288,8 +307,37 @@ a, button {
   }
 
   .service-price {
+    width: 250px;
+    text-align: left;
+    font-family: $body-font;
+    font-size: 18px;
+    visibility: visible;
+    transform: translateY(6rem);
     color: white;
     background-color: black;
+    border-radius: 10px;
+    transition: transform .5s;
+
+    &:hover {
+      cursor: pointer;
+      transform: translateY(5rem);
+    }
+
+    + .active {
+      transform: translateY(0);
+    }
+
+  }
+
+  .bottom-card {
+    box-shadow: $box-shadow-4;
+    height: 325px;
+    visibility: hidden;
+    transform: translateY(-6rem);
+    transition: transform .5s, opacity .3s, visibility .5s;
+    border-radius: 0 0 10px 10px;
+    opacity: 0;
+
   }
 
   ul {
@@ -300,6 +348,15 @@ a, button {
       margin: 10px auto;
     }
   }
+
+   + .active {
+      .bottom-card {
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
 }
 
 // Media Queries

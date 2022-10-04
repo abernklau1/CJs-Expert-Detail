@@ -10,6 +10,11 @@ const commonServices = [
     desc: ["Vacuum", "Shampoo", "Wipe down"],
   },
   {
+    name: "Exterior",
+    price: "$200",
+    desc: ["Wash", "Polish", "Buff"]
+  },
+  {
     name: "Full Detail",
     price: "$350",
     desc: [
@@ -65,7 +70,7 @@ const Home = () => {
         </h3>
         <p>Providing the best services possible</p>
         <div className="services-container">
-          {services.map((service, i) => {
+          {commonServices.map((service, i) => {
             return <ServiceCard key={i} service={service} />;
           })}
         </div>
