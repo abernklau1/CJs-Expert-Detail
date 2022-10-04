@@ -254,6 +254,14 @@ a, button {
     }
   }
 
+  .com-services {
+    text-align: center;
+
+    h3 {
+      font-size: 30px;
+    }
+  }
+
 }
 
 @keyframes fadeInLeft {
@@ -322,22 +330,34 @@ a, button {
       cursor: pointer;
       transform: translateY(5rem);
     }
-
-    + .active {
-      transform: translateY(0);
-    }
-
   }
+
+  .service-price.active {
+      transform: translateY(0);
+  }
+
 
   .bottom-card {
     box-shadow: $box-shadow-4;
-    height: 325px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 275px;
     visibility: hidden;
     transform: translateY(-6rem);
     transition: transform .5s, opacity .3s, visibility .5s;
     border-radius: 0 0 10px 10px;
     opacity: 0;
 
+    .btn {
+      margin: 0 10px 10px;
+      width: 140px
+    }
+
+  }
+
+  .service-desc {
+    padding-top: 15px;
   }
 
   ul {
@@ -345,17 +365,16 @@ a, button {
     text-align: left;
     padding: 1px 25px;
     li {
-      margin: 10px auto;
+      margin: 15px auto;
     }
   }
 
-   + .active {
-      .bottom-card {
+  .bottom-card.active {
         visibility: visible;
-        transform: translateY(0);
+        transform: translateY(-2rem);
         opacity: 1;
-      }
-    }
+  }
+
 
 }
 

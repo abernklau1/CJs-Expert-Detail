@@ -1,22 +1,21 @@
 import { useAppContext } from "../context/appContext";
 
-import { useState } from "react";
-
+import { useState } from "react"
 
 const ServiceCard = ({ service }) => {
 
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(false)
 
   const handleClick = () => {
     setIsActive(!isActive);
-  };
+  }
 
   return (
     <section className="card-container">
-      <button className={isActive ? "service-price active" : "service-price"} onClick={handleClick}>
+      <div className={isActive ? "service-price active" : "service-price"} onClick={handleClick}>
         <h2>{service.price}</h2>
         <p>{service.name}</p>
-      </button>
+      </div>
       <div className={isActive ? "bottom-card active" : "bottom-card"}>
         <div className="service-desc">
           <ul>
